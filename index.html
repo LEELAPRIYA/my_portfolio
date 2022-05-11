@@ -1,426 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" media="screen and (max-width:530px)" href="phone.css">
-</head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    .bgimg {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110009/sudha_ug2r9m.jpg');
+      min-height: 100%;
     }
-    html{
-        scroll-behavior: smooth;
-    }
-    /*navbar */
-    .navbar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(0, 0,0,0.5);
-        position: sticky;
-        top: 0;
-    }
-    .navbar ul{
-        display: flex;
-        list-style: none;
-        margin: 20px 0px;
-    }
-    .navbar ui li{
-        font-family: century;
-        font-size: 1.1rem;
-        font-weight: bold;
-        font-size: x-large;
-    }
-    .navbar ul li a{
-        text-decoration:rgb(150, 15, 15);
-        color:black;
-        padding: 8px 25px;
-        transition: all .5s ease;
-    }
-    .navbar ul li a:hover{
-        background-color: rgb(255, 255, 255);
-        color: black;
-        box-shadow: 0 0 10px white;
-    }
-
-    /* Home section */
-    #home{
-        display: flex;
-        flex-direction: column;
-        background-color: none;
-        height: 1000PX;
-        justify-content:center;
-        align-items:center;
-        color:maroon;
-        font-size: x-large;
-    }
-    #home::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        background:url('https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110051/sudha_3_hvzhsr.jpg') no-repeat center center/cover;
-        height: 1000px;
-        width: 100%;
-        z-index: -1;
-        opacity: .8;
-    }
-    .main{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid white;
-        align-items: center;
-        position: absolute;
-        top: 30%;
-        right: 10%;
-    }
-    .headings{
-        font-family: century;
-        font-size: 3rem;
-        text-align:center;
-        margin: 40px 0px;
-    }
-    .btn{
-        padding: 10x 35px;
-        background-color: transparent;
-        border: 1px solid white;
-        color:black;
-        outline: none;
-        transition: .6s ease;
-    }
-    .btn:hover{
-        cursor: pointer;
-        background-color: white;
-        color: black;
-        box-shadow: 0 0 5px white,0 0 10px white,0 0 15px white;
-        font-weight: bold;
-    }
-
-    /*About Selection */
-    about{
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        padding: 20px;
-        margin-bottom: 50px;
-    }
-    #pic{
-        display: flex;
-    }
-    #pic img{
-        width: 575px;
-        height: 400px;
-    }
-    #intro{
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        padding: 10px;
-    }
-    #intro h2{
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    /* Picture Section */
-    #pictures{
-        display: flex;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        color: white;
-        align-items: center;
-        padding: 20px;
-
-    }
-    .gallery{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        box-sizing: border-box;
-    }
-    .gallery img{
-        width: 200px;
-        height: 240px;
-        margin: 10px;
-    }
-
-    /* Skills Section */
-    #skills{
-        display: flex;
-        flex-direction: column-reverse;
-        padding: 20px;
-        align-items: center;
-    }
-    .row{
-        display: flex;
-    }
-    .box{
-        display: flex;
-        flex-direction: column;
-        width: 350px;
-        height: 450px;
-        border: 1px solid black;
-        margin: 10px;
-        align-items: center;
-        text-align: justify;
-        padding: 10px;
-        border-radius: 15px;
-        background: linear-gradient(to top, rgb(16, 15, 15) 50%, white 50%);
-        background-size: 100% 200%;
-        transition: all .8s;
-    }
-    .box:hover{
-        background-position: left bottom;
-        color: rgb(243, 243, 243);
-        border: none;
-        box-shadow: 0 0 20px rgb(3, 3, 3);
-    }
-    .box image{
-        width: 80px;
-        height: 80px;
-        background-color: white;
-        padding: 10px;
-    }
-
-    /* contact section */
-    #contact{
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        background-color:black;
-        color: white;
-    }
-    .form{
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        align-items: center;
-        margin: 20px 0px;
-    }
-    .input{
-        padding: 12px;
-        margin: 15px;
-        width: 30%;
-        border:none;
-        outline: none;
-    }
-    footer p {
-        text-align: center;
-    }
-    
-    .experience-area h1 {
-        padding: 5%;
-    }
-    
-    .site-footer
-    {
-        background-color:black;
-        padding:45px 0 20px;
-        font-size:15px;
-        line-height:24px;
-        color:#737373;
-    }
-    .site-footer hr
-    {
-        border-top-color:#bbb;
-        opacity:0.5
-    }
-    .site-footer hr.small
-    {
-        margin:20px 0
-    }
-    .site-footer h6
-    {
-        color:#fff;
-        font-size:16px;
-        text-transform:uppercase;
-        margin-top:5px;
-        letter-spacing:2px
-    }
-    .site-footer a
-    {
-        color:#737373;
-    }
-    .site-footer a:hover
-    {
-        color:#3366cc;
-        text-decoration:none;
-    }
-    .footer-links
-    {
-        padding-left:0;
-        list-style:none
-    }
-    .footer-links li
-    {
-        display:block
-    }
-    .footer-links a
-    {
-        color:#737373
-    }
-    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
-    {
-        color:#3366cc;
-        text-decoration:none;
-    }
-    .footer-links.inline li
-    {
-        display:inline-block
-    }
-    .site-footer .social-icons
-    {
-        text-align:center
-    }
-    .site-footer .social-icons a
-    {
-        width:60px;
-        height:52px;
-        line-height:40px;
-        border-radius:100%;
-        background-color:#33353d
-    }
-    .copyright-text
-    {
-        margin:0
-    }
-    @media (max-width:991px)
-    {
-        .site-footer [class^=col-]
-        {
-        margin-bottom:30px
-        }
-    }
-    @media (max-width:767px)
-    {
-        .site-footer
-        {
-        padding-bottom:0
-        }
-        .site-footer .copyright-text,.site-footer .social-icons
-        {
-        text-align:center
-        }
-    }
-    .social-icons
-    {
-        padding-left:0;
-        margin-bottom:0;
-        list-style:none
-    }
-    .social-icons li
-    {
-        display:inline-block;
-        margin-bottom:5px
-    }
-    .social-icons li.title
-    {
-        margin-right:15px;
-        text-transform:uppercase;
-        color:#96a2b2;
-        font-weight:700;
-        font-size:13px
-    }
-    .social-icons a{
-        position:relative;
-        background-color:#eceeef;
-        color:#818a91;
-        font-size:30px;
-        display:inline-block;
-        bottom: 20px;
-        line-height:44px;
-        width:30px;
-        height:34px;
-        text-align:center;
-        margin-right:8px;
-        border-radius:100%;
-        -webkit-transition:all .2s linear;
-        -o-transition:all .2s linear;
-        transition:all .2s linear
-    }
-    .social-icons a:active,.social-icons a:focus,.social-icons a:hover
-    {
-        color:#fff;
-        background-color:#29aafe
-    }
-    .social-icons.size-sm a
-    {
-        line-height:34px;
-        height:24px;
-        width:24px;
-        font-size:12px
-    }
-    .social-icons a.facebook:hover
-    {
-        background-color:#3b5998
-    }
-    .social-icons a.twitter:hover
-    {
-        background-color:#00aced
-    }
-    .social-icons a.linkedin:hover
-    {
-        background-color:#007bb6
-    }
-    .social-icons a.dribbble:hover
-    {
-        background-color:#5a5758
-    }
-    @media (max-width:767px)
-    {
-        .social-icons li.title
-        {
-        display:block;
-        margin-right:0;
-        font-weight:600
-        }
-    }
-</style>
+    </style>
+  </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#home">home</a></li>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#pictures">Pictures</a></li>
-            <li><a href="#Skills">Skills</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-    </nav>
-        
-    <section id="home">
-            <div class="Main">
-                 <h1 class="Headings">I AM <br>LEELA PRIYA </h1>
-                 <button class="btn">
-                    LEARNER
-              </button>
-             </div>
-         </section> 
 
-        <section id="about">
-            <h1 class="headings">ABOUT ME</h1>
-            <div id="pic">
-                <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110037/sudha_2_slf00h.jpg" alt="">
-                <div id="intro">
-                    <h2>ATHIKAYALA.LEELA PRIYA</h2>
-                    <P>HELLO EVERYONE ,This is LEELA PRIYA(Leela),I am from NELLORE,ANDHRA PRADESH.
-                        I'm Fresher in VIT-AP university.I choose COMPUTER SCIENCE AND ENGINEERING
-                        in VIT.
-                        Strengths: I am Self motivated,always beleive in myself and a well mannered  person.my Hobbies are
-                        Listening to music, Reading comics,watching movies etc... 
-                                  I was recently joined in CSI club.I'm Very happy to be a part in CSI Chapter.                     
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg"></div>
+</nav>
 
-                    </P>
-                </div>
-            </div>
-        </section>
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
 
-        <section id="pictures">
-            <h1 class="headings">PICTURES</h1>
-            <div class="gallery">
-                <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652114354/sudha4_zexhhk.jpg" alt="">
-                <img…
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>LEELA PRIYA</b></h1>
+    <p>Learner.</p>
+    <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110009/sudha_ug2r9m.jpg" class="w3-image w3-hide-large w3-hide-small w3-round" style="display:block;width:60%;margin:auto;">
+    <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110009/sudha_ug2r9m.jpg" class="w3-image w3-hide-large w3-hide-medium w3-round" width="1000" height="1333">
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+  </header>
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey">My Portfolio</h2>
+    <hr class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652110037/sudha_2_slf00h.jpg" style="width:100%">
+        <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652114354/sudha4_zexhhk.jpg" style="width:100%">
+      </div>
+
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About</h2>
+    <hr class="w3-opacity">
+    <p>Hello everyone,I am leela priya,new learner in CSI club.I am from Tirupati,AP.<br>I choose CSE branch in VIT ap because I am fond of coding.</br>
+      I completed my schooling in VEMA HIGH SCHOOL and intermediate in VISWASAI.<br>
+      strengths: I am self motivated and always believe in myself.</br>
+      Hobbies are listening to music,reading comics and watching movies etc...
+    </p>
+    <h3 class="w3-padding-16">My Skills</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">90%</div>
+    </div>
+    <p class="w3-wide">coding in python abd java</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">50%</div>
+    </div>
+    <p class="w3-wide">active in social media</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">90%</div>
+    </div><br>
+
+    <div class="w3-row w3-center w3-dark-grey w3-padding-16 w3-section">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">50+</span><br>
+        friends
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">1</span><br>
+        Running project
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">100+</span><br>
+        supporters
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">10+</span><br>
+        Meetings
+      </div>
+    </div>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </button>
+
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24">My friends</h3>
+    <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652148212/priya1_bnm2kr.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Neeraja.</span> csi monitor.</p>
+    <p>Neeraja is just awesome. I am so happy to have met her!</p><br>
+   
+    <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652148245/priya2_swgmn8.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Pranathi.</span>csi co-ordinator.</p>
+    <p>she always guides us in doing projects.</p><br>
+    
+    <img src="https://res.cloudinary.com/dtlqw2vir/image/upload/v1652148274/priya3_ucnmsr.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Meera.</span> csi member.</p>
+    <p>we both help each other in our projects.</p><br>
+    
+    
+  <!-- End About Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Contact Me</h2>
+    <hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Tirupati,AP</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 9392305472</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: priya@gmail.com</p>
+    </div>
+   
+    <p>Lets get in touch. Send me a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>  
+  
+  <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-small">This website was made with W3schools Spaces. Make your own free website today!</p>
+    <a class="w3-button w3-round-xxlarge w3-small w3-dark-grey" href="https://www.w3schools.com/spaces" target="_blank">Start now</a>  
+    <!-- End footer -->
+  </footer>
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
